@@ -454,6 +454,12 @@ a:hover, a:focus, a:active {
   padding: 15px 0;
 }
 
+#scoreboard .score-item .col-team-score span {
+  background-color: black;
+  border-radius: 8px;
+  padding: 0px 10px;
+}
+
 #scoreboard .score-item .col-team {
   overflow-x: hidden;
   overflow-y: hidden;
