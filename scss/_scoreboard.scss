@@ -1,0 +1,40 @@
+.val-logo {
+  width: 100%;
+  max-width: 150px;
+}
+
+.team-detail {
+  color: white;
+  padding:10px 60px;
+  .line{
+    font-size: 50px;
+    background-color: #222;
+    padding: 10px 20px;
+    margin: 5px 0;
+  }
+}
+
+#scoreboard {
+  background: white;
+  padding: 0;
+  border-bottom: 20px solid white;
+  padding-top: 1px;
+  .score-item {
+    background: #2d77ad;
+    margin-top: 15px;
+    padding: 15px 0;
+    .col-team {
+      overflow-x: hidden;
+      overflow-y: hidden;
+    }
+    h1 {
+      font-size: 80px !important;
+    }
+    h2 {
+      font-size: 60px !important;
+      line-height: 80px;
+      position: relative;
+      top: 10px;
+    }
+  }
+}
