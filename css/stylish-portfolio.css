@@ -510,10 +510,36 @@ a:hover, a:focus, a:active {
   background: #16a085;
   margin-top: 5px;
   padding: 15px 0;
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+@media only screen and (max-width: 1199px) {
+  #scorelist .score-item {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
+#scorelist .score-item .col-team-rank span {
+  border: 2px solid white;
+  border-radius: 8px;
+  padding: 0px 10px;
+}
+
+#scorelist .score-item .col-team-score span {
+  background-color: black;
+  border-radius: 8px;
+  padding: 0px 10px;
 }
 
 #scorelist .score-item .col-team {
   overflow-x: hidden;
+}
+
+#scorelist .score-item .col-team h1 {
+  margin: 0;
+  padding: 4px 0;
 }
 
 #scorelist .score-item h1 {

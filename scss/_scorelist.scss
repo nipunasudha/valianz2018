@@ -30,8 +30,33 @@
     background: #16a085;
     margin-top: 5px;
     padding: 15px 0;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    @media #{$md-max} {
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+    .col-team-rank {
+      span {
+        //background-color: black;
+        border: 2px solid white;
+        border-radius: 8px;
+        padding: 0px 10px;
+      }
+    }
+    .col-team-score {
+      span {
+        background-color: black;
+        border-radius: 8px;
+        padding: 0px 10px;
+      }
+    }
     .col-team {
       overflow-x: hidden;
+      h1 {
+        margin: 0;
+        padding: 4px 0;
+      }
     }
     h1 {
       font-size: 24px !important;
