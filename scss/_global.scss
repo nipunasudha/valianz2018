@@ -6,6 +6,8 @@ html {
 
 body {
   @include body-font;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 // Custom Button Size

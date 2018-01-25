@@ -6,6 +6,8 @@ html {
 
 body {
   font-family: 'Source Sans Pro';
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .btn-xl {
