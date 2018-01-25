@@ -3,18 +3,18 @@
   max-width: 150px;
 }
 
-.team-detail {
-  color: white;
-  padding:10px 60px;
-  .line{
-    font-size: 50px;
-    background-color: #222;
-    padding: 10px 20px;
-    margin: 5px 0;
-  }
-}
 
 #scoreboard {
+  .team-detail {
+    color: white;
+    padding: 10px 60px;
+    .line {
+      font-size: 50px;
+      background-color: #222;
+      padding: 10px 20px;
+      margin: 5px 0;
+    }
+  }
   background: white;
   padding: 0;
   border-bottom: 20px solid white;

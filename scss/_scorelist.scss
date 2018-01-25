@@ -6,6 +6,19 @@
 }
 
 #scorelist {
+  .team-detail {
+    color: white;
+    padding: 6px 30px;
+    .line {
+      background-color: #222;
+      font-size: 26px;
+      padding: 6px 20px;
+      margin: 5px 0;
+      @media #{$md-max} {
+        font-size: 20px;
+      }
+    }
+  }
   margin-top: 30px;
   @media #{$md-max} {
     margin-top: 10px;

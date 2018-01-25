@@ -4,7 +4,7 @@ $(function () {
 });
 
 scoreboard.binder = function () {
-    $('#scoreboard').on('click', '.score-item', function () {
+    $('#scoreboard, #scorelist').on('click', '.score-item', function () {
         var detailPanel = $(this).next('.team-detail');
         var itemId = $(this).attr('id');
         if (!scoreboard.states[itemId]) {
