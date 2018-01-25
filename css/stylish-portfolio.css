@@ -481,6 +481,16 @@ a:hover, a:focus, a:active {
   max-width: 150px;
 }
 
+.masthead .head-text {
+  text-align: center !important;
+}
+
+@media only screen and (max-width: 1199px) {
+  .masthead .head-text {
+    text-align: left !important;
+  }
+}
+
 #scorelist {
   margin-top: 30px;
   background: none;

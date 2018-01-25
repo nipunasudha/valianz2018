@@ -5,6 +5,15 @@
   max-width: 150px;
 }
 
+.masthead {
+  .head-text {
+    text-align: center !important;
+    @media #{$md-max} {
+      text-align: left !important;
+    }
+  }
+}
+
 #scorelist {
   .team-detail {
     color: white;
