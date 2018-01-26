@@ -63,15 +63,16 @@
 </header>
 
 <div class="container pt-50 pb-30">
-    <h2>Add Score</h2>
-    <form id="add_score" class="form-horizontal" action="/action_page.php">
+    <form id="add_score" class="form-horizontal col-md-6 col-xs-12" action="/action_page.php">
+        <h2>Add Score</h2>
         <div class="form-group">
             <label for="team">Select method:</label>
             <select class="form-control" id="method">
                 <option value="1">New</option>
                 <option value="2">Update</option>
             </select>
-        </div><div class="form-group">
+        </div>
+        <div class="form-group">
             <label for="team">Select Team:</label>
             <select class="form-control" id="team">
                 <option value="1">Romulus</option>
@@ -103,11 +104,9 @@
                 <option value="12">Banner Drawing</option>
             </select>
         </div>
-        <div class="form-group">
-            <label class="control-label col-sm-2" for="score">Score:</label>
-            <div class="col-sm-10">
-                <input type="number" class="form-control" id="score" placeholder="Enter Score" name="score">
-            </div>
+        <div class="form-group row">
+            <div class="col-5"><label class="control-label" for="score">Score:</label>
+                <input type="number" class="form-control" id="score" placeholder="Enter Score" name="score"></div>
         </div>
 
         <div class="form-group">
@@ -141,8 +140,6 @@
 <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
     <i class="fa fa-angle-up"></i>
 </a>
-
-
 
 
 <!-- Bootstrap core JavaScript -->

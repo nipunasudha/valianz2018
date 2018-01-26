@@ -36,10 +36,9 @@ scoreboard.getScores = function (username,password,callback) {
         },
         "data": "{\"requestType\":1}"
 
-    }
+    };
 
     $.ajax(settings).done(function (response) {
-        console.log('sdsd');
         console.log(JSON.parse(response));
         var scores = JSON.parse(response).teamInformation;
         scores.sort(compare);

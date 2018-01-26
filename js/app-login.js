@@ -1,53 +1,52 @@
 var Login = {};
 
 $(function () {
-    $('#login').submit(function(ev) {
+    $('#login').submit(function (ev) {
         console.log('submit');
         ev.preventDefault();
         var username = $('#email').val();
         var password = $('#pwd').val();
-        var response = Login.check(username,password);
-        // this.submit();
+        Login.check(username, password);
     });
 });
 
 
-Login.check = function (username,password) {
-    document.cookie = "username="+username+";expires=Thu, 01 Feb 2018 00:00:00 UTC;domain=localhost; path=/;";
-    document.cookie = "password="+password+";expires=Thu, 01 Feb 2018 00:00:00 UTC;domain=localhost; path=/;";
+Login.check = function (username, password) {
+    document.cookie = "username=" + username + ";expires=Thu, 01 Feb 2018 00:00:00 UTC;domain=localhost; path=/;";
+    document.cookie = "password=" + password + ";expires=Thu, 01 Feb 2018 00:00:00 UTC;domain=localhost; path=/;";
     var settings = {
         "async": true,
         "crossDomain": true,
         "url": "http://valianz.ml:8080/api/auth/user",
         "method": "GET",
         "headers": {
-            "Authorization": "Basic "+btoa(username + ":" + password),
+            "Authorization": "Basic " + btoa(username + ":" + password)
         }
     };
 
     $.ajax(settings).done(function (response) {
-        console.log(response);
+        alert("Log in successful!");
+        // window.location = "valianz2018/admin/add_score"
+        window.location = "/admin/add_score"
     });
 
     $.ajax(settings).fail(function (error) {
-        console.log(error.responseText);
+        alert("Wrong credentials!");
     })
-
-    window.location
 };
 
 
 Login.getUser = function () {
     var username = getCookie('username');
     var password = getCookie('password');
-    return [username,password];
+    return [username, password];
 };
 
 function getCookie(cname) {
     var name = cname + "=";
     var decodedCookie = decodeURIComponent(document.cookie);
     var ca = decodedCookie.split(';');
-    for(var i = 0; i <ca.length; i++) {
+    for (var i = 0; i < ca.length; i++) {
         var c = ca[i];
         while (c.charAt(0) == ' ') {
             c = c.substring(1);
