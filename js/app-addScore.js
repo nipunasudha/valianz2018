@@ -7,13 +7,14 @@ $(function () {
         var team = $('#team').val();
         var game = $('#game').val();
         var score = $('#score').val();
-        var response = AddScore.addScore(getCookie('username'),getCookie('password'),team,game,score);
+        var method = $('#method').val();
+        var response = AddScore.addScore(getCookie('username'),getCookie('password'),team,game,score,method);
         // this.submit();
     });
 });
 
 
-AddScore.addScore = function (username,password,team,game,score) {
+AddScore.addScore = function (username,password,team,game,score,method) {
 
     var settings = {
         "async": true,
@@ -25,9 +26,9 @@ AddScore.addScore = function (username,password,team,game,score) {
             "Authorization": "Basic "+btoa(username + ":" + password),
             "content-type":"application/json"
         },
-        "data": "{\"requestType\":2,\"teamID\":"+team+",\"gameID\":"+game+",\"score\":"+score+"}"
+        "data": "{\"requestType\":"+method+",\"teamID\":"+team+",\"gameID\":"+game+",\"score\":"+score+"}"
 
-    }
+    };
 
     $.ajax(settings).done(function (response) {
         console.log(response);
