@@ -39,7 +39,7 @@ AddScore.addScore = function (username,password,team,game,score) {
 };
 
 
-function getCookie(cname) {
+AddScore.getCookie = function (cname) {
     var name = cname + "=";
     var decodedCookie = decodeURIComponent(document.cookie);
     var ca = decodedCookie.split(';');
