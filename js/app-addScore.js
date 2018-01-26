@@ -7,6 +7,10 @@ $(function () {
         var team = $('#team').val();
         var game = $('#game').val();
         var score = $('#score').val();
+        if (isNaN(score) || score === "" || score === undefined) {
+            alert("Invalid score!")
+            return;
+        }
         var method = $('#method').val();
         if (confirm("Are you sure you want to submit " + score + " points for " +
                 $("#team option[value=" + team + "]").text() + " for " +
@@ -32,13 +36,13 @@ AddScore.addScore = function (username, password, team, game, score, method) {
         "data": "{\"requestType\":" + method + ",\"teamID\":" + team + ",\"gameID\":" + game + ",\"score\":" + score + "}"
 
     };
-    console.log("uname: " + username + "  pw: " + password);
+
     $.ajax(settings).done(function (response) {
-        alert("Submission successful!");
+        console.log(response);
     });
 
     $.ajax(settings).fail(function (error) {
-        alert("Error! Check network, re-login and try again.");
+        console.log(error);
     });
 };
 

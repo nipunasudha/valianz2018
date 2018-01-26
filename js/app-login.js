@@ -27,7 +27,7 @@ Login.check = function (username, password) {
     $.ajax(settings).done(function (response) {
         alert("Log in successful!");
         // window.location = "valianz2018/admin/add_score"
-        window.location = "/admin/add_score"
+        window.location = "/add-score"
     });
 
     $.ajax(settings).fail(function (error) {
