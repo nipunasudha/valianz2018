@@ -1,47 +1,43 @@
-var Login = {};
+var AddScore = {};
 
 $(function () {
-    $('#login').submit(function(ev) {
+    $('#add_score').submit(function(ev) {
         console.log('submit');
         ev.preventDefault();
-        var username = $('#email').val();
-        var password = $('#pwd').val();
-        var response = Login.check(username,password);
+        var team = $('#team').val();
+        var game = $('#game').val();
+        var score = $('#score').val();
+        var response = AddScore.addScore(getCookie('username'),getCookie('password'),team,game,score);
         // this.submit();
     });
 });
 
 
-Login.check = function (username,password) {
-    document.cookie = "username="+username+";expires=Thu, 01 Feb 2018 00:00:00 UTC;domain=localhost; path=/;";
-    document.cookie = "password="+password+";expires=Thu, 01 Feb 2018 00:00:00 UTC;domain=localhost; path=/;";
+AddScore.addScore = function (username,password,team,game,score) {
+
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "http://valianz.ml:8080/api/auth/user",
-        "method": "GET",
+        "url": "http://valianz.ml:8080/api/updateData",
+        "method": "POST",
+
         "headers": {
             "Authorization": "Basic "+btoa(username + ":" + password),
-        }
-    };
+            "content-type":"application/json"
+        },
+        "data": "{\"requestType\":2,\"teamID\":"+team+",\"gameID\":"+game+",\"score\":"+score+"}"
+
+    }
 
     $.ajax(settings).done(function (response) {
         console.log(response);
     });
 
     $.ajax(settings).fail(function (error) {
-        console.log(error.responseText);
-    })
-
-    window.location
+        console.log(error);
+    });
 };
 
-
-Login.getUser = function () {
-    var username = getCookie('username');
-    var password = getCookie('password');
-    return [username,password];
-};
 
 function getCookie(cname) {
     var name = cname + "=";

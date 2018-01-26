@@ -11,17 +11,17 @@
     <title>Valianz 2018 Scoreboard</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
           rel="stylesheet" type="text/css">
-    <link href="../vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+    <link href="../../vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../css/stylish-portfolio.min.css" rel="stylesheet">
-    <link rel="icon" type="image/png" href="../img/favicon.png"/>
+    <link href="../../css/stylish-portfolio.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../../img/favicon.png"/>
 
 </head>
 
@@ -49,12 +49,12 @@
     <div class="container text-center my-auto head-text">
         <div class="row">
             <div class="col-3">
-                <img class="val-logo mr-20" src="../img/val-logo.png" alt="">
+                <img class="val-logo mr-20" src="../../img/val-logo.png" alt="">
             </div>
             <div class="col-9">
                 <h1 class="mb-1">Valianz 2018</h1>
                 <h3 class="mb-5">
-                    <em>User Login</em>
+                    <em>Add Score</em>
                 </h3></div>
         </div>
 
@@ -63,27 +63,33 @@
 </header>
 
 <div class="container pt-50 pb-30">
-    <h2>Login</h2>
-    <form id="login" class="form-horizontal" action="/action_page.php">
+    <h2>Add Score</h2>
+    <form id="add_score" class="form-horizontal" action="/action_page.php">
         <div class="form-group">
-            <label class="control-label col-sm-2" for="email">Username:</label>
+            <label for="team">Select Team:</label>
+            <select class="form-control" id="team">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="game">Select Game:</label>
+            <select class="form-control" id="game">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="score">Score:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="email" placeholder="Enter username" name="email">
+                <input type="number" class="form-control" id="score" placeholder="Enter Score" name="score">
             </div>
         </div>
-        <div class="form-group">
-            <label class="control-label col-sm-2" for="pwd">Password:</label>
-            <div class="col-sm-10">
-                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-                <div class="checkbox">
-                    <label><input type="checkbox" name="remember"> Remember me</label>
-                </div>
-            </div>
-        </div>
+
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <button type="submit" class="btn btn-default">Submit</button>
@@ -119,16 +125,17 @@
 
 
 <!-- Bootstrap core JavaScript -->
-<script src="../vendor/jquery/jquery.min.js"></script>
-<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../../vendor/jquery/jquery.min.js"></script>
+<script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Plugin JavaScript -->
-<script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Custom scripts for this template -->
-<script src="../js/stylish-portfolio.min.js"></script>
-<script src="../js/app-scoreboard.js"></script>
-<script src="../js/app-login.js"></script>
+<script src="../../js/stylish-portfolio.min.js"></script>
+<script src="../../js/app-scoreboard.js"></script>
+<script src="../../js/app-login.js"></script>
+<script src="../../js/app-addScore.js"></script>
 
 </body>
 
