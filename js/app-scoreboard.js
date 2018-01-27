@@ -27,7 +27,7 @@ scoreboard.getScores = function (username,password,callback) {
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "http://valianz.ml:8080/api/requestDatax",
+        "url": "http://valianz.ml:8080/api/requestData",
         "method": "POST",
 
         "headers": {
