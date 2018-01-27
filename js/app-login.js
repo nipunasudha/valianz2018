@@ -12,8 +12,8 @@ $(function () {
 
 
 Login.check = function (username, password) {
-    document.cookie = "username=" + username + ";expires=Thu, 01 Feb 2018 00:00:00 UTC;domain=localhost; path=/;";
-    document.cookie = "password=" + password + ";expires=Thu, 01 Feb 2018 00:00:00 UTC;domain=localhost; path=/;";
+    document.cookie = "username=" + username + ";expires=Thu, 01 Feb 2018 00:00:00 UTC;domain=http://valianz.ml/; path=/;";
+    document.cookie = "password=" + password + ";expires=Thu, 01 Feb 2018 00:00:00 UTC;domain=http://valianz.ml/; path=/;";
     var settings = {
         "async": true,
         "crossDomain": true,
