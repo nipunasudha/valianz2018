@@ -32,20 +32,20 @@
 <body id="page-top">
 <!-- Navigation -->
 <!--<a class="menu-toggle rounded" href="#">-->
-    <!--<i class="fa fa-bars"></i>-->
+<!--<i class="fa fa-bars"></i>-->
 <!--</a>-->
 <!--<nav id="sidebar-wrapper">-->
-    <!--<ul class="sidebar-nav">-->
-        <!--<li class="sidebar-brand">-->
-            <!--<a class="js-scroll-trigger" href="#page-top">Valianz 2018</a>-->
-        <!--</li>-->
-        <!--<li class="sidebar-nav-item">-->
-            <!--<a class="js-scroll-trigger" href="#page-top">Live score sheet</a>-->
-        <!--</li>-->
-        <!--<li class="sidebar-nav-item">-->
-            <!--<a class="js-scroll-trigger" href="#about">About</a>-->
-        <!--</li>-->
-    <!--</ul>-->
+<!--<ul class="sidebar-nav">-->
+<!--<li class="sidebar-brand">-->
+<!--<a class="js-scroll-trigger" href="#page-top">Valianz 2018</a>-->
+<!--</li>-->
+<!--<li class="sidebar-nav-item">-->
+<!--<a class="js-scroll-trigger" href="#page-top">Live score sheet</a>-->
+<!--</li>-->
+<!--<li class="sidebar-nav-item">-->
+<!--<a class="js-scroll-trigger" href="#about">About</a>-->
+<!--</li>-->
+<!--</ul>-->
 <!--</nav>-->
 
 <!-- Header -->
@@ -100,34 +100,35 @@
 <script src="../js/app-scoreboard.js"></script>
 <script src="../js/app-addScore.js"></script>
 <script>
-    updateScore();
-
-    setInterval(updateScore,5000);
+    $(function () {
+        updateScore();
+        setInterval(updateScore, 30000);
+    })
 
     function updateScore() {
-        var scores = scoreboard.getScores(AddScore.getCookie('username'),AddScore.getCookie('password'),function (scores) {
+        var scores = scoreboard.getScores(AddScore.getCookie('username'), AddScore.getCookie('password'), function (scores) {
             var rank = 0;
             html = '';
             scores.forEach(function (team) {
-                rank+=1;
-                html += '<div class="row score-item" id="score-'+rank+'">'+
-                    '<div class="col-md-3 col-team col-team-rank"><h1>'+rank+'</h1></div>'+
-                    '<div class="col-md-6 col-team col-team-name"><h2>'+team.teamName+'</h2></div>'+
-                    '<div class="col-md-3 col-team col-team-score"><h1><span>'+team.teamScore+'</span></h1></div>'+
-                    '</div>'+
+                rank += 1;
+                html += '<div class="row score-item" id="score-' + rank + '" style="background-color:'+ team.teamColor +' ">' +
+                    '<div class="col-md-3 col-team col-team-rank"><h1>' + rank + '</h1></div>' +
+                    '<div class="col-md-6 col-team col-team-name"><h2>' + team.teamName + '</h2></div>' +
+                    '<div class="col-md-3 col-team col-team-score"><h1><span>' + team.teamScore + '</span></h1></div>' +
+                    '</div>' +
                     '<div class="team-detail" style="display: none;">';
                 team.gameScores.forEach(function (game) {
-                    html+='<div class="row line">'+
-                        '<div class="col-8">'+
-                        game.gameName+
-                        '</div>'+
-                        '<div class="col-4">'+
-                        game.score+
-                        '</div>'+
+                    html += '<div class="row line">' +
+                        '<div class="col-8">' +
+                        game.gameName +
+                        '</div>' +
+                        '<div class="col-4">' +
+                        game.score +
+                        '</div>' +
                         '</div>'
                 });
 
-                html+='</div>';
+                html += '</div>';
                 $('#scoreboard').html(html)
             });
         });

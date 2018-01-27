@@ -38,11 +38,11 @@ AddScore.addScore = function (username, password, team, game, score, method) {
     };
 
     $.ajax(settings).done(function (response) {
-        console.log(response);
+        alert("Submission successful!");
     });
 
     $.ajax(settings).fail(function (error) {
-        console.log(error);
+        alert("Error! Invalid entry or not signed-in.");
     });
 };
 
